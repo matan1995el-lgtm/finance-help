@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מערכת התאוששות כלכלית מקצועית | 37 משימות</title>
+  
+  <!-- גופנים מקצועיים -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* סגנונות נוספים ספציפיים */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    /* Header מקצועי */
+    .header {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-large);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .header-title h1 {
+      font-family: var(--main-title-font);
+      font-size: var(--main-title-size);
+      font-weight: var(--main-title-weight);
+      color: var(--main-title-color);
+      margin: 0;
+    }
+    
+    .header-subtitle {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      margin: 0.5rem 0 0 0;
+    }
+    
+    .header-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .stat-card {
+      background: var(--color-surface-light);
+      border-radius: var(--radius-medium);
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid var(--color-border);
+    }
+    
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.5rem;
+    }
+    
+    /* Progress */
+    .overall-progress h3 {
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-secondary);
+      font-weight: 600;
+    }
+    
+    /* Controls */
+    .controls {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-large);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .controls-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .controls-row + .controls-row {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border);
+    }
+    
+    /* Search */
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+      position: relative;
+    }
+    
+    .search-box input {
+      width: 100%;
+      padding-right: 3rem;
+    }
+    
+    .search-icon {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      opacity: 0.6;
+    }
+    
+    /* Settings Form */
+    .settings-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xl);
+    }
+    
+    .settings-section {
+      background: var(--color-surface-light);
+      border-radius: var(--radius-medium);
+      padding: var(--spacing-lg);
+      border: 1px solid var(--color-border);
+    }
+    
+    .settings-section-title {
+      font-size: var(--font-size-large);
+      font-weight: 700;
+      margin-bottom: var(--spacing-md);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-primary);
+    }
+    
+    .theme-presets {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-md);
+    }
+    
+    .theme-preset-btn {
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-medium);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      text-align: center;
+      font-family: var(--font-family);
+    }
+    
+    .theme-preset-btn:hover {
+      border-color: var(--color-primary);
+      background: var(--color-surface-light);
+      transform: translateY(-2px);
+    }
+    
+    .theme-preset-title {
+      font-weight: 700;
+      font-size: var(--font-size-base);
+      margin: 0.5rem 0;
+      color: var(--color-text);
+    }
+    
+    .theme-preset-desc {
+      font-size: var(--font-size-small);
+      color: var(--color-text-secondary);
+    }
+    
+    .settings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-md);
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+    
+    .form-label {
+      font-size: var(--font-size-small);
+      font-weight: 600;
+      color: var(--color-text-secondary);
+    }
+    
+    input[type="color"] {
+      width: 100%;
+      height: 40px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-small);
+      cursor: pointer;
+      background: var(--color-surface);
+    }
+    
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      border-radius: 10px;
+      background: var(--color-surface-light);
+      outline: none;
+      -webkit-appearance: none;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+    
+    .range-value {
+      display: inline-block;
+      min-width: 40px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .header {
+        padding: 1.5rem;
+      }
+      
+      .header-title h1 {
+        font-size: 1.5rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .controls-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .search-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <div class="header-title">
+          <div>
+            <h1>💼 מערכת התאוששות כלכלית מקצועית</h1>
+            <p class="header-subtitle">37 משימות מלאות | זכויות מילואים • תמיכות ממשלתיות • חובות • תעסוקה • דיור • עסקים</p>
+          </div>
+        </div>
+        
+        <div class="header-actions">
+          <button class="btn btn-icon" onclick="openSettings()" title="הגדרות">
+            <span style="font-size: 1.25rem;">⚙️</span>
+          </button>
+          <button class="btn" id="exportBtn">
+            <span>📊</span>
+            <span>ייצוא</span>
+          </button>
+          <button class="btn btn-danger" id="resetBtn">
+            <span>🔄</span>
+            <span>איפוס</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-value" id="totalTasks">0</span>
+          <span class="stat-label">סה"כ משימות</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="completedTasks">0</span>
+          <span class="stat-label">הושלמו ✓</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="pendingTasks">0</span>
+          <span class="stat-label">ממתינות</span>
+        </div>
+      </div>
+      
+      <!-- Overall Progress -->
+      <div class="overall-progress">
+        <h3>התקדמות כללית</h3>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressBar" style="width: 0%;">
+            <span id="progressText">0%</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Controls -->
+    <div class="controls">
+      <!-- Row 1: Search + View Toggle -->
+      <div class="controls-row">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="input" placeholder="חפש משימה...">
+        </div>
+        
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="kanban" onclick="switchViewMode('kanban')">
+            <span>📊</span>
+            <span>קנבן</span>
+          </button>
+          <button class="view-toggle-btn" data-view="list" onclick="switchViewMode('list')">
+            <span>📋</span>
+            <span>רשימה</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Row 2: Tabs מעודכן - עם הפרדה למשימות שהושלמו -->
+      <div class="controls-row">
+        <div class="tabs">
+          <button class="tab active" data-tab="all">
+            <span>📚</span>
+            <span>כל המשימות</span>
+          </button>
+          <button class="tab" data-tab="todo">
+            <span>📋</span>
+            <span>לביצוע</span>
+          </button>
+          <button class="tab" data-tab="done">
+            <span>✅</span>
+            <span>הושלמו</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Row 3: Category Filters -->
+      <div class="controls-row">
+        <div class="filter-chips">
+          <button class="filter-chip active" data-category="all">
+            <span>🌟</span>
+            <span>הכל</span>
+          </button>
+          <button class="filter-chip" data-category="reserve">
+            <span>🎖️</span>
+            <span>מילואים</span>
+          </button>
+          <button class="filter-chip" data-category="government">
+            <span>🏛️</span>
+            <span>ממשלתי</span>
+          </button>
+          <button class="filter-chip" data-category="debt">
+            <span>💳</span>
+            <span>חובות</span>
+          </button>
+          <button class="filter-chip" data-category="employment">
+            <span>💼</span>
+            <span>תעסוקה</span>
+          </button>
+          <button class="filter-chip" data-category="housing">
+            <span>🏠</span>
+            <span>דיור</span>
+          </button>
+          <button class="filter-chip" data-category="business">
+            <span>🚀</span>
+            <span>עסקים</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Tasks Container -->
+    <div id="tasksContainer">
+      <!-- Tasks will be rendered here -->
+    </div>
+  </div>
+  
+  <!-- Modal: Task Details -->
+  <div class="modal" id="taskModal">
+    <div class="modal-content" id="taskModalContent">
+      <!-- Task details will be rendered here -->
+    </div>
+  </div>
+  
+  <!-- Modal: Settings -->
+  <div class="modal" id="settingsModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>⚙️</span>
+          <span>הגדרות מתקדמות</span>
+        </div>
+        <button class="modal-close" onclick="closeSettings()">×</button>
+      </div>
+      
+      <div class="modal-body">
+        <form class="settings-form" id="settingsForm">
+          <!-- ערכות נושא מקצועיות -->
+          <div class="settings-section">
+            <h3 class="settings-section-title">
+              <span>🎨</span>
+              <span>ערכות נושא מקצועיות</span>
+            </h3>
+            <div class="theme-presets">
+              <button type="button" class="theme-preset-btn" onclick="applyThemePreset('professional_dark')">
+                <div style="font-size: 2rem;">🌙</div>
+                <div class="theme-preset-title">מקצועי כהה</div>
+                <div class="theme-preset-desc">עסקי וכהה</div>
+              </button>
+              <button type="button" class="theme-preset-btn" onclick="applyThemePreset('professional_light')">
+                <div style="font-size: 2rem;">☀️</div>
+                <div class="theme-preset-title">מקצועי בהיר</div>
+                <div class="theme-preset-desc">נקי ובהיר</div>
+              </button>
+              <button type="button" class="theme-preset-btn" onclick="applyThemePreset('corporate_blue')">
+                <div style="font-size: 2rem;">💼</div>
+                <div class="theme-preset-title">כחול עסקי</div>
+                <div class="theme-preset-desc">קורפורטיבי</div>
+              </button>
+              <button type="button" class="theme-preset-btn" onclick="applyThemePreset('elegant_gray')">
+                <div style="font-size: 2rem;">🎩</div>
+                <div class="theme-preset-title">אפור אלגנטי</div>
+                <div class="theme-preset-desc">מינימליסטי</div>
+              </button>
+              <button type="button" class="theme-preset-btn" onclick="applyThemePreset('modern_slate')">
+                <div style="font-size: 2rem;">💎</div>
+                <div class="theme-preset-title">צפחה מודרנית</div>
+                <div class="theme-preset-desc">עכשווי</div>
+              </button>
+              <button type="button" class="theme-preset-btn" onclick="applyThemePreset('executive_black')">
+                <div style="font-size: 2rem;">🖤</div>
+                <div class="theme-preset-title">שחור מנהלים</div>
+                <div class="theme-preset-desc">יוקרתי</div>
+              </button>
+            </div>
+          </div>
+          
+          <!-- צבעים מותאמים אישית -->
+          <div class="settings-section">
+            <h3 class="settings-section-title">
+              <span>🎨</span>
+              <span>צבעים מותאמים אישית</span>
+            </h3>
+            <div class="settings-grid">
+              <div class="form-group">
+                <label class="form-label">צבע ראשי</label>
+                <input type="color" id="colorPrimary">
+              </div>
+              <div class="form-group">
+                <label class="form-label">צבע משני</label>
+                <input type="color" id="colorSecondary">
+              </div>
+              <div class="form-group">
+                <label class="form-label">צבע הדגשה</label>
+                <input type="color" id="colorAccent">
+              </div>
+              <div class="form-group">
+                <label class="form-label">רקע</label>
+                <input type="color" id="colorBackground">
+              </div>
+              <div class="form-group">
+                <label class="form-label">משטח</label>
+                <input type="color" id="colorSurface">
+              </div>
+              <div class="form-group">
+                <label class="form-label">טקסט</label>
+                <input type="color" id="colorText">
+              </div>
+            </div>
+          </div>
+          
+          <!-- טיפוגרפיה -->
+          <div class="settings-section">
+            <h3 class="settings-section-title">
+              <span>📝</span>
+              <span>טיפוגרפיה בסיסית</span>
+            </h3>
+            <div class="settings-grid">
+              <div class="form-group">
+                <label class="form-label">גופן בסיסי</label>
+                <select id="fontFamily" class="select">
+                  <option value="'Inter', sans-serif">Inter (ברירת מחדל)</option>
+                  <option value="'Heebo', sans-serif">Heebo</option>
+                  <option value="'Rubik', sans-serif">Rubik</option>
+                  <option value="'Assistant', sans-serif">Assistant</option>
+                  <option value="'Arial', sans-serif">Arial</option>
+                  <option value="'David', serif">David</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">גודל טקסט: <span class="range-value" id="fontSizeBaseValue">1</span>rem</label>
+                <input type="range" id="fontSizeBase" min="0.875" max="1.25" step="0.025" value="1">
+              </div>
+            </div>
+          </div>
+          
+          <!-- טיפוגרפיה מתקדמת -->
+          <div class="settings-section">
+            <h3 class="settings-section-title">
+              <span>✨</span>
+              <span>הגדרות טיפוגרפיה מתקדמות</span>
+            </h3>
+            
+            <!-- כותרת ראשית -->
+            <div style="margin-bottom: 1.5rem; padding: 1rem; background: var(--color-surface-light); border-radius: var(--radius-medium);">
+              <h4 style="margin: 0 0 1rem 0; font-size: 1.125rem;">🎯 כותרת ראשית (H1)</h4>
+              <div class="settings-grid">
+                <div class="form-group">
+                  <label class="form-label">גופן</label>
+                  <select id="mainTitleFont" class="select">
+                    <option value="'Inter', sans-serif">Inter</option>
+                    <option value="'Heebo', sans-serif">Heebo</option>
+                    <option value="'Rubik', sans-serif">Rubik</option>
+                    <option value="'Assistant', sans-serif">Assistant</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'David', serif">David</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">גודל: <span class="range-value" id="mainTitleSizeValue">2</span>rem</label>
+                  <input type="range" id="mainTitleSize" min="1.5" max="3" step="0.1" value="2">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">משקל</label>
+                  <select id="mainTitleWeight" class="select">
+                    <option value="400">רגיל (400)</option>
+                    <option value="500">בינוני (500)</option>
+                    <option value="600">עבה (600)</option>
+                    <option value="700">מודגש (700)</option>
+                    <option value="800" selected>מודגש מאוד (800)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">צבע (אופציונלי)</label>
+                  <input type="color" id="mainTitleColor">
+                  <button type="button" class="btn" style="margin-top: 0.5rem; padding: 0.25rem 0.5rem; font-size: 0.875rem;" onclick="document.getElementById('mainTitleColor').value=''; saveSettingsFromForm();">איפוס צבע</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- כותרות משנה -->
+            <div style="margin-bottom: 1.5rem; padding: 1rem; background: var(--color-surface-light); border-radius: var(--radius-medium);">
+              <h4 style="margin: 0 0 1rem 0; font-size: 1.125rem;">📌 כותרות משנה (H2-H6)</h4>
+              <div class="settings-grid">
+                <div class="form-group">
+                  <label class="form-label">גופן</label>
+                  <select id="subtitleFont" class="select">
+                    <option value="'Inter', sans-serif">Inter</option>
+                    <option value="'Heebo', sans-serif">Heebo</option>
+                    <option value="'Rubik', sans-serif">Rubik</option>
+                    <option value="'Assistant', sans-serif">Assistant</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'David', serif">David</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">גודל: <span class="range-value" id="subtitleSizeValue">1.5</span>rem</label>
+                  <input type="range" id="subtitleSize" min="1" max="2.5" step="0.1" value="1.5">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">משקל</label>
+                  <select id="subtitleWeight" class="select">
+                    <option value="400">רגיל (400)</option>
+                    <option value="500">בינוני (500)</option>
+                    <option value="600">עבה (600)</option>
+                    <option value="700" selected>מודגש (700)</option>
+                    <option value="800">מודגש מאוד (800)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">צבע (אופציונלי)</label>
+                  <input type="color" id="subtitleColor">
+                  <button type="button" class="btn" style="margin-top: 0.5rem; padding: 0.25rem 0.5rem; font-size: 0.875rem;" onclick="document.getElementById('subtitleColor').value=''; saveSettingsFromForm();">איפוס צבע</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- טקסט גוף -->
+            <div style="margin-bottom: 1.5rem; padding: 1rem; background: var(--color-surface-light); border-radius: var(--radius-medium);">
+              <h4 style="margin: 0 0 1rem 0; font-size: 1.125rem;">💬 טקסט גוף (P, Span, Div)</h4>
+              <div class="settings-grid">
+                <div class="form-group">
+                  <label class="form-label">גופן</label>
+                  <select id="bodyTextFont" class="select">
+                    <option value="'Inter', sans-serif">Inter</option>
+                    <option value="'Heebo', sans-serif">Heebo</option>
+                    <option value="'Rubik', sans-serif">Rubik</option>
+                    <option value="'Assistant', sans-serif">Assistant</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'David', serif">David</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">גודל: <span class="range-value" id="bodyTextSizeValue">1</span>rem</label>
+                  <input type="range" id="bodyTextSize" min="0.875" max="1.5" step="0.025" value="1">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">משקל</label>
+                  <select id="bodyTextWeight" class="select">
+                    <option value="400" selected>רגיל (400)</option>
+                    <option value="500">בינוני (500)</option>
+                    <option value="600">עבה (600)</option>
+                    <option value="700">מודגש (700)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">צבע (אופציונלי)</label>
+                  <input type="color" id="bodyTextColor">
+                  <button type="button" class="btn" style="margin-top: 0.5rem; padding: 0.25rem 0.5rem; font-size: 0.875rem;" onclick="document.getElementById('bodyTextColor').value=''; saveSettingsFromForm();">איפוס צבע</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- אפקטים -->
+          <div class="settings-section">
+            <h3 class="settings-section-title">
+              <span>✨</span>
+              <span>אפקטים</span>
+            </h3>
+            <div class="settings-grid">
+              <div class="form-group">
+                <label class="form-label">רדיוס פינות: <span class="range-value" id="borderRadiusValue">8</span>px</label>
+                <input type="range" id="borderRadius" min="0" max="20" step="2" value="8">
+              </div>
+            </div>
+          </div>
+          
+          <!-- גיבוי -->
+          <div class="settings-section">
+            <h3 class="settings-section-title">
+              <span>💾</span>
+              <span>גיבוי והחזרה</span>
+            </h3>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button type="button" class="btn" onclick="exportSettings()">
+                <span>📤</span>
+                <span>ייצוא הגדרות</span>
+              </button>
+              <button type="button" class="btn" onclick="importSettings()">
+                <span>📥</span>
+                <span>ייבוא הגדרות</span>
+              </button>
+              <button type="button" class="btn btn-danger" onclick="resetSettings()">
+                <span>🔄</span>
+                <span>איפוס</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn" onclick="closeSettings()">ביטול</button>
+        <button class="btn btn-success" onclick="saveSettingsFromForm()">
+          <span>💾</span>
+          <span>שמור</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="tasks_data.js"></script>
+  <script src="settings.js"></script>
+  <script src="app.js"></script>
+  
+  <script>
+    // סנכרון range sliders
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('input[type="range"]').forEach(slider => {
+        slider.addEventListener('input', (e) => {
+          const output = document.getElementById(e.target.id + 'Value');
+          if (output) output.textContent = e.target.value;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

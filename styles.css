@@ -1,0 +1,1023 @@
+/* ========================================
+   עיצוב מקצועי ואלגנטי - ניגודיות מושלמת
+   ======================================== */
+
+:root {
+  /* צבעים - יוחלפו ע"י JavaScript */
+  --color-primary: #3b82f6;
+  --color-secondary: #2563eb;
+  --color-accent: #60a5fa;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-light: #334155;
+  --color-text: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-border: #475569;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  
+  /* טיפוגרפיה מקצועית */
+  --font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-size-small: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-large: 1.125rem;
+  --font-size-xlarge: 1.25rem;
+  --font-size-xxlarge: 1.5rem;
+  --font-size-xxxlarge: 2rem;
+  
+  /* הגדרות מתקדמות לכותרות וטקסט */
+  --main-title-font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --main-title-size: 2rem;
+  --main-title-weight: 800;
+  --main-title-color: var(--color-text);
+  
+  --subtitle-font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --subtitle-size: 1.5rem;
+  --subtitle-weight: 700;
+  --subtitle-color: var(--color-text);
+  
+  --body-text-font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --body-text-size: 1rem;
+  --body-text-weight: 400;
+  --body-text-color: var(--color-text);
+  
+  /* מרווחים */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  
+  /* אפקטים מינימליסטיים */
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 12px;
+  --radius-xlarge: 16px;
+  --blur: 0px;
+  --opacity: 1;
+  --shadow-intensity: 0.5;
+  
+  /* אנימציות */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ========================================
+   סגנונות בסיסיים
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-text-font);
+  font-size: var(--body-text-size);
+  font-weight: var(--body-text-weight);
+  color: var(--body-text-color);
+  background: var(--color-background);
+  line-height: 1.6;
+  direction: rtl;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-family: var(--main-title-font);
+  font-size: var(--main-title-size);
+  font-weight: var(--main-title-weight);
+  color: var(--main-title-color);
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: var(--subtitle-font);
+  font-size: var(--subtitle-size);
+  font-weight: var(--subtitle-weight);
+  color: var(--subtitle-color);
+}
+
+p, span, div {
+  font-family: var(--body-text-font);
+  font-weight: var(--body-text-weight);
+  color: var(--body-text-color);
+}
+
+/* ========================================
+   גלילה מותאמת
+   ======================================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* ========================================
+   כפתורים מקצועיים
+   ======================================== */
+.btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  font-family: var(--font-family);
+}
+
+.btn:hover {
+  background: var(--color-surface-light);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-success {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+
+.btn-danger {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+  color: white;
+}
+
+.btn-icon {
+  padding: var(--spacing-sm);
+  aspect-ratio: 1;
+}
+
+/* ========================================
+   קלטים
+   ======================================== */
+.input,
+.select {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  transition: all var(--transition-normal);
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: var(--color-surface-light);
+}
+
+.input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+/* ========================================
+   כרטיסים
+   ======================================== */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-normal);
+}
+
+/* ========================================
+   Modals
+   ======================================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.modal.active {
+  opacity: 1;
+}
+
+.modal-content {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  padding: var(--spacing-xxl);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal-title {
+  font-size: var(--font-size-xxlarge);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.modal-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.modal-close:hover {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+  color: white;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--spacing-xl);
+}
+
+/* ========================================
+   טאבים מקצועיים
+   ======================================== */
+.tabs {
+  display: flex;
+  gap: var(--spacing-xs);
+  background: var(--color-surface);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-medium);
+  border: 1px solid var(--color-border);
+}
+
+.tab {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+}
+
+.tab:hover {
+  background: var(--color-surface-light);
+  color: var(--color-text);
+}
+
+.tab.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+/* ========================================
+   Filter Chips
+   ======================================== */
+.filter-chips {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.filter-chip:hover {
+  background: var(--color-surface-light);
+  border-color: var(--color-accent);
+}
+
+.filter-chip.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+/* ========================================
+   Kanban Board
+   ======================================== */
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.kanban-column {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  padding: var(--spacing-lg);
+  min-height: 400px;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.column-header h3 {
+  font-size: var(--font-size-xlarge);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.column-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* ========================================
+   Task Card - עיצוב מקצועי
+   ======================================== */
+.task-card {
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  padding: var(--spacing-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.task-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.task-card.completed {
+  opacity: 0.6;
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+  color: var(--color-text-secondary);
+}
+
+.task-checkbox-wrapper {
+  margin-bottom: var(--spacing-md);
+}
+
+.checkbox-container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+}
+
+.checkbox-label:hover {
+  border-color: var(--color-accent);
+}
+
+.task-checkbox:checked + .checkbox-label {
+  background: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.task-checkbox:checked + .checkbox-label:after {
+  content: '✓';
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.task-title {
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+  color: var(--color-text);
+}
+
+.task-badges {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.badge-success { background: var(--color-success); border-color: var(--color-success); color: white; }
+.badge-warning { background: var(--color-warning); border-color: var(--color-warning); color: white; }
+.badge-danger { background: var(--color-danger); border-color: var(--color-danger); color: white; }
+.badge-primary { background: var(--color-primary); border-color: var(--color-primary); color: white; }
+
+.task-description {
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.task-details {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.task-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.action-btn {
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: var(--font-size-small);
+  font-weight: 600;
+}
+
+.action-btn:hover {
+  background: var(--color-surface-light);
+  border-color: var(--color-accent);
+}
+
+.action-btn-primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+/* ========================================
+   Progress Bar
+   ======================================== */
+.progress-bar {
+  width: 100%;
+  height: 24px;
+  background: var(--color-surface);
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--color-border);
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-success);
+  border-radius: var(--radius-medium);
+  transition: width var(--transition-slow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: var(--font-size-small);
+}
+
+/* ========================================
+   View Toggle
+   ======================================== */
+.view-toggle {
+  display: flex;
+  gap: var(--spacing-xs);
+  background: var(--color-surface);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-medium);
+  border: 1px solid var(--color-border);
+}
+
+.view-toggle-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-weight: 600;
+  font-size: var(--font-size-small);
+}
+
+.view-toggle-btn:hover {
+  background: var(--color-surface-light);
+  color: var(--color-text);
+}
+
+.view-toggle-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+/* ========================================
+   Empty State
+   ======================================== */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xxl);
+  color: var(--color-text-secondary);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.5;
+}
+
+/* ========================================
+   Steps
+   ======================================== */
+.task-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.step-section {
+  background: var(--color-surface-light);
+  border-radius: var(--radius-medium);
+  padding: var(--spacing-lg);
+  border-left: 3px solid var(--color-accent);
+}
+
+.step-title {
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.step-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.step-list li {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-surface);
+  border-radius: var(--radius-small);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  color: var(--color-text-secondary);
+}
+
+.step-list li:before {
+  content: '✓';
+  color: var(--color-success);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   Detail Card
+   ======================================== */
+.detail-card {
+  background: var(--color-surface-light);
+  border-radius: var(--radius-medium);
+  padding: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  border: 1px solid var(--color-border);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 1024px) {
+  .kanban-board {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: var(--spacing-lg);
+  }
+  
+  .task-card {
+    padding: var(--spacing-md);
+  }
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(100px); }
+}
+
+/* ========================================
+   תצוגת משימות שהושלמו - עיצוב מקצועי
+   ======================================== */
+.completed-view {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  animation: fadeIn 0.4s ease;
+}
+
+.completed-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.completed-header h2 {
+  font-size: var(--font-size-xxxlarge);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+.completed-subtitle {
+  font-size: var(--font-size-xlarge);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin: 0;
+}
+
+.completed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.completed-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-normal);
+  animation: fadeIn 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.completed-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-success);
+  transition: width var(--transition-normal);
+}
+
+.completed-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--color-shadow);
+  border-color: var(--color-accent);
+}
+
+.completed-card:hover::before {
+  width: 100%;
+  opacity: 0.1;
+}
+
+.completed-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  gap: var(--spacing-md);
+}
+
+.completed-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.completed-card-title {
+  font-size: var(--font-size-xlarge);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.completed-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.completed-card-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: var(--spacing-md) 0;
+}
+
+.completed-card-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.completed-detail-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-surface-light);
+  border-radius: var(--radius-small);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.completed-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  gap: var(--spacing-md);
+}
+
+.completed-badges {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.completed-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.undo-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-small);
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+}
+
+.undo-btn:hover {
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.completed-empty {
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  color: var(--color-text-secondary);
+}
+
+.completed-empty-icon {
+  font-size: 5rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.3;
+}
+
+.completed-empty h3 {
+  font-size: var(--font-size-xxlarge);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.completed-empty p {
+  font-size: var(--font-size-large);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Responsive - תצוגת הושלמו */
+@media (max-width: 1200px) {
+  .completed-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .completed-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .completed-view {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .completed-header h2 {
+    font-size: var(--font-size-xxlarge);
+  }
+  
+  .completed-card {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
